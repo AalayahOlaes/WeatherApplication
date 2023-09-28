@@ -1,0 +1,81 @@
+$primary-background: #e5e4e2;
+$primary-text-color: #1C2331;
+$secondary-text-color: #868B94;
+$card-border-radius: 35px;
+$padding-content: 16px;
+
+.weather-card {
+  background: rgb(255,255,254);
+  background: linear-gradient(90deg, rgba(255,255,254,1) 0%, rgba(255,236,211,1) 53%);
+  border-radius: $card-border-radius;
+  color: $primary-text-color;
+  position: relative;
+  height: 300px;
+  width: 300px;
+  margin: 16px;
+  
+  .card-body-content {
+    .header {
+      .city-name {
+        font-weight: bold;
+        font-size: 1.8rem;
+        width: 90%;
+        padding-left: 25px;
+        white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+      }
+    }
+    
+    .main-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 25px;
+      height: 65px;
+      
+      .temperature {
+        font-size: 3rem;
+        font-weight: bold;
+        color: $primary-text-color;
+      }
+
+      .extra-details {
+        font-size: 1rem;
+        display: flex;
+        flex-direction: column;
+        height: 100px;
+        justify-content: space-evenly;
+
+        svg {
+          padding-right: 6px;
+          height: 22px;
+          width: 22px;
+          color: $secondary-text-color;
+
+        }
+
+        div {
+          align-items: center;
+          color: $primary-text-color;
+
+        }
+      }
+
+      
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: min-content;
+      padding-top: 20px;
+      .weather-type {
+        color: #625c53;
+        margin-top: 35px;
+      }
+    }
+  }
+}
