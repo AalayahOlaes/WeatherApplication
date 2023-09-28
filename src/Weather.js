@@ -5,7 +5,7 @@ import {
   MDBRow,
 } from "mdb-react-ui-kit";
 import WeatherCard from './WeatherCard'
-import './WeatherCard.scss'
+import { FaSearch } from 'react-icons/fa'
 
 function Weather() {
   const [zipcode, setZipcode] = useState('');
@@ -16,13 +16,6 @@ function Weather() {
     const storedWeatherData = JSON.parse(localStorage.getItem('weatherDatas') || '[]');
     setWeatherDatas(storedWeatherData)
   }, []);
-
-  const deleteCity = (indexToDelete) => {
-    const updatedWeatherDatas = weatherDatas.filter((weatherData, currentIndex) => currentIndex !== indexToDelete)
-    setWeatherDatas(updatedWeatherDatas);
-
-    localStorage.setItem('weatherDatas', JSON.stringify(updatedWeatherDatas))
-  }
 
   const weatherApiKey = '28d5c062b7e276d3b015edd683ca8a42';
   const geocodeApiKey = '665b6e7c3b39ac9b3f708c0004fd77a5';
@@ -58,14 +51,19 @@ function Weather() {
         <MDBRow className="justify-content-center align-items-center h-100">
           <MDBCol md="8" lg="6" xl="4">
             <div className="container">
-              <input
-                type="text"
-                className="Search-box"
-                placeholder="Enter Zipcode"
-                value={zipcode}
-                onChange={handleZipcodeChange}
-              />
-              <button className="searchbtn" onClick={getWeatherData}>Search</button>
+
+            <h1 className='weather-header'>Weather Forecast</h1>
+              <div className="search-container">
+                <input
+                  type="text"
+                  className="search-box"
+                  placeholder="Enter Zipcode"
+                  value={zipcode}
+                  onChange={handleZipcodeChange}
+                />
+                <button className="search-btn" onClick={getWeatherData}><FaSearch />
+                </button>
+              </div>
               
               <div className='weather-card-container'>
                 {weatherDatas.map((data, index) => (

@@ -4,7 +4,6 @@ import {
   MDBCardBody,
   MDBTypography,
 } from "mdb-react-ui-kit";
-import { CiCloudSun } from 'react-icons/ci'
 import { FiSunrise, FiSunset } from 'react-icons/fi'
 import { WiHumidity } from 'react-icons/wi'
 import './WeatherCard.scss';
